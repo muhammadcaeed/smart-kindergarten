@@ -9,6 +9,12 @@
 * **Detailed Reporting:**  Generate reports on individual children, providing insights into their daily activities and health data.
 * **Secure Authentication:**  Robust authentication mechanisms ensure data privacy and security for all users.
 
+## Live Preview
+
+* **Parents Panel:** https://smart-kindergarten-parents.firebaseapp.com/
+* **Admin Panel:** https://smart-kindergarten-admin-panel.firebaseapp.com/
+* **Teachers Panel:** https://smart-kindergarten-teachers.firebaseapp.com/
+
 ## Technology Stack
 
 * **Frontend:** Ionic Framework (Angular 2)
@@ -27,6 +33,7 @@ The Parent Panel application utilizes the Cordova Health Plugin to access and tr
 * **Send data to the server:**  Transmit collected health data to the backend server for storage and further processing.
 
 **Note:** The Health Plugin requires a compatible wearable device and user authorization to access health information.
+
 
 ## API Routes
 
