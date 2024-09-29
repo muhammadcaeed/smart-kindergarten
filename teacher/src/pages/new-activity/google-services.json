@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "651247298343",
+    "firebase_url": "https://sk-teacher-panel.firebaseio.com",
+    "project_id": "sk-teacher-panel",
+    "storage_bucket": "sk-teacher-panel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651247298343:android:a6f5e24f9f25b685",
+        "android_client_info": {
+          "package_name": "sk.teacher.panel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651247298343-u2d77i994tuo32m3gtjc6fvqk9557co2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDns3vKWfbLEHRPawBRPxE8guabTlhbu9g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,45 @@
+page-messaging {
+  * {
+    font:calibri;
+    color:white;
+  }
+  ion-content {
+    background-color:#1b4040!important;
+      background-image: url('../assets/images/texture.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+  .toolbar-background {
+      background-color:black!important;
+  }
+  .toolbar-title {
+      color:white;
+      font-weight: normal;
+      font-size: 1.4em;
+      letter-spacing: 2px;
+  }
+  ion-item {
+    background-color:#245655!important;
+    border-color: #173636!important;
+    border-bottom:1px solid #173636!important;
+    }
+    .chat {
+      background-color:#173636!important;
+      border-color: #173636!important;
+    }
+    ion-avatar {
+        border:2px solid #153342;
+        border-radius:20px;
+    }
+    ion-item h2 {
+        color:#fff;
+    }
+    ion-item h3 {
+        color:#898686;
+    }
+    ion-avatar {
+        border:2px solid #153342;
+        border-radius:20px;
+    }
+}

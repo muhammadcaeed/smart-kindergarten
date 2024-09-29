@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      CHAT ROOM
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid no-padding>
+    <ion-row *ngFor="let message of messages" [ngClass]="{'justify-right' : message.username == username}">
+      <ng-template [ngIf]="message.username != username">
+        <ion-col col-2><img class="avatar" src="assets/imgs/chat/teacher.png" width="35px"/></ion-col>
+        <div class="arrow-left"></div>
+        <ion-col col-8 class="receiver-message"  [ngClass]="{ 'col-3' : message.length <= 16 }">
+          <ion-row>
+            <ion-col>{{ message.username }}</ion-col>
+            <ion-col>{{ message.timestamp | date:'shortTime' }}</ion-col>
+          </ion-row>
+          <p class="text-msg" col-12>{{ message.message }}</p>
+        </ion-col>
+      </ng-template>
+      <ng-template  [ngIf]="message.username == username" justify-content-end>
+        <ion-col justify-content-end col-8 class="sender-message" [ngClass]="{ 'col-3' : message.length <= 16 }">
+          <ion-row>
+            <ion-col>{{ message.username }}</ion-col>
+            <ion-col>{{ message.timestamp | date:'shortTime' }}</ion-col>
+          </ion-row>
+          <p class="text-msg" col-12>{{ message.message }}</p>
+        </ion-col>
+        <div class="arrow-right"></div>
+        <ion-col col-2 justify-content-end><img class="avatar" src="assets/imgs/chat/boy.png" width="35px"/></ion-col>
+      </ng-template>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid no-padding>
+      <ion-row align-items-center>
+        <ion-col>
+          <!-- <img src="assets/imgs/chat/add.png" width="15px"/> -->
+        </ion-col>
+        <ion-col col-9>
+            <ion-textarea [(ngModel)]="message"></ion-textarea>
+        </ion-col>
+        <ion-col (click)="sendMessage()"><img src="assets/imgs/chat/paper-plane.png" width="25px"/></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

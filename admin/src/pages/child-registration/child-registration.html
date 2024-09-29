@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     CHILD REGISTRATION
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <form name="form" (ngSubmit)="f.form.valid && register(f)" #f="ngForm" novalidate>
+        <ion-item>
+          <ion-label floating>Child name</ion-label>
+          <ion-input type="text" name="cname" [(ngModel)]="child.cname" #cname="ngModel" required></ion-input>
+        </ion-item>
+        <p *ngIf="f.submitted && !cname.valid && !submit" class="spacing field-required" ion-text color="light">Child name is required</p>
+        <ion-item>
+          <ion-label floating>Guardian name</ion-label>
+          <ion-input type="text" name="gname" [(ngModel)]="child.gname" #gname="ngModel" required></ion-input>
+        </ion-item>
+        <p *ngIf="f.submitted && !gname.valid  && !submit" class="spacing field-required" ion-text color="light">Guardian name is required</p>
+        <ion-item>
+          <ion-label floating>Age</ion-label>
+             <ion-select interface="action-sheet" name="age" [(ngModel)]="child.age" #age="ngModel" required>
+                 <ion-option *ngFor="let num of numbers">
+                    {{ num }}
+                 </ion-option>
+             </ion-select>
+        </ion-item>
+        <p *ngIf="f.submitted && !age.valid  && !submit" class="spacing field-required" ion-text color="light">Age is required</p>
+
+        <ion-item>
+          <ion-label floating>Gender</ion-label>
+          <ion-select interface="action-sheet" name="gender" [(ngModel)]="child.gender" #gender="ngModel" required>
+              <ion-option value="male">Male</ion-option>
+              <ion-option value="female">Female</ion-option>
+          </ion-select>
+        </ion-item>
+        <p *ngIf="f.submitted && !gender.valid  && !submit" class="spacing field-required" ion-text color="light">Gender is required</p>
+        <ion-item>
+          <ion-label floating>Address</ion-label>
+          <ion-input type="text" name="address" [(ngModel)]="child.address" #address="ngModel" required></ion-input>
+        </ion-item>
+        <p *ngIf="f.submitted && !address.valid  && !submit" class="spacing field-required" ion-text color="light">Address is required</p>
+        <ion-item>
+          <ion-label floating>Mobile No.</ion-label>
+          <ion-input type="text" name="mobileno" pattern="[03]{2}[0-9]{9}"  [(ngModel)]="child.mobileno" #mobileno="ngModel" required></ion-input>
+        </ion-item>
+        <p *ngIf="f.submitted && !mobileno.valid  && !submit" class="spacing field-required" ion-text color="light">Mobile number is required (03xxxxxxxxx)</p>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="email" name="email" email [(ngModel)]="user.email" #email="ngModel" required></ion-input>
+        </ion-item>
+        <p *ngIf="f.submitted && !email.valid  && !submit" class="spacing field-required" ion-text color="light">Email is required</p>
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text" name="username" [(ngModel)]="user.username" #username="ngModel" required></ion-input>
+        </ion-item>
+        <p *ngIf="f.submitted && !username.valid  && !submit" class="spacing field-required" ion-text color="light">Username is required</p>
+        <p *ngIf="f.submitted && username.valid && (username.value.length < 5)" class="spacing field-required" ion-text color="light">Username must be 5 characters long atleast</p>
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
+        </ion-item>
+        <p *ngIf="f.submitted && !password.valid  && !submit" class="spacing field-required" ion-text color="light">Password is required</p>
+        <p *ngIf="f.submitted && password.valid && (password.value.length < 5)" class="spacing field-required" ion-text color="light">Password must be 5 characters long atleast</p>
+        <br /><br /><br />
+        <button [disabled]="loading" ion-button class="submit-button">SUBMIT</button>
+    </form>
+</ion-content>

@@ -1,0 +1,79 @@
+page-chat {
+    ion-content {
+        background-image: url('../assets/images/bg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    ion-navbar .toolbar-background {
+        background-color:#000;
+    }
+    ion-navbar .toolbar-title {
+        color:white;
+        font-weight: normal;
+        font-size: 1.4em;
+        letter-spacing: 2px;
+    }
+    ion-footer .toolbar-background {background-color:#173636;}
+    ion-footer .toolbar-md {padding:0;}
+    ion-row {text-align: center;}
+    ion-col {padding:0;}
+    textarea {height: 25px;padding:0; color:#fff;}
+    .text-input {margin:0;}
+
+    .arrow-left {
+        width: 0;
+        height: 0;
+        border-top: 0 solid transparent;
+        border-bottom: 15px solid transparent;
+        border-right:10px solid #173636;
+    }
+    .arrow-right {
+        width: 0;
+        height: 0;
+        border-top: 0 solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left:10px solid #245655;
+    }
+    .receiver-message {
+        background-color: #173636;
+        text-align: left;
+        padding: 0 2.7px 0 5px!important;
+        border-radius: 0 10px 10px 10px;
+        p.text-msg { margin: 0; color: #fff; opacity: 0.7; font-weight: lighter; font-size: 0.9em;}
+    }
+    .sender-message {
+        margin:0;
+        background-color: #245655;
+        text-align: left;
+        padding: 0 2.7px 0 5px!important;
+        border-radius: 10px 0 10px 10px;
+        p.text-msg { margin: 0; color: #fff; opacity: 0.7; font-weight: lighter; font-size: 0.9em;}
+        ion-col:nth-child(2) { text-align: right; margin:0; font-size:0.8em; color:#173636; }
+    }
+    .justify-right {
+      -webkit-box-pack: end;
+      -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+    }
+    ion-row {
+        margin-top:8px;
+    }
+    ion-row ion-row {
+        margin:0;
+        ion-col:nth-child(1) { margin:0; color: #fff; opacity: 0.6; text-align: left; }
+        ion-col:nth-child(2) { text-align: right; margin:0; font-size:0.8em; color:#245655; }
+    }
+    .col-3 {
+        // width: 45%!important;
+        max-width: 42%!important;
+    }
+    .avatar {
+        border:2px solid #173636;
+        border-radius:13px;
+    }
+    .clearfix {
+        overflow:auto;
+    }
+}

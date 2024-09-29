@@ -1,0 +1,61 @@
+page-children {
+    ion-content {
+        background-image: url('../assets/images/dashboard_bg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .searchbar-md .searchbar-input, .searchbar-ios .searchbar-input {
+        background-color:#0d3048;
+        color:#fff !important;
+        border:2px solid #112834;
+        border-radius:5px;
+        font-size:1.2em;
+    }
+    .toolbar-background {
+        background-color:black!important;
+    }
+    .toolbar-title {
+        color:white;
+        font-weight: normal;
+        font-size: 1.4em;
+        letter-spacing: 2px;
+    }
+    .spacing {
+        margin-left: 16px;
+    }
+    .toolbar-title-md {
+        // text-align: center;
+    }
+    // .icon {
+    //     color:#b7c1c8;
+    // }
+    ion-item-sliding, ion-item, ion-item-options, .slideBg {
+        background-color: #12303e!important;
+        border-color: #22495e!important;
+    }
+    ion-item-sliding {
+        border-bottom:1px solid #153342!important;
+    }
+    ion-item h2 {
+        color:#fff;
+    }
+    ion-item h3 {
+        color:#898686;
+    }
+    ion-avatar {
+        border:2px solid #153342;
+        border-radius:20px;
+    }
+    .fab {
+        background-color: #22495e;
+        border: 2px solid #122b37;
+    }
+    .show {
+        display: block!important;
+        color:white!important;
+    }
+    .hide {
+        display:none !important;
+    }
+}

@@ -1,0 +1,205 @@
+page-edit-child-profile {
+    ion-content {
+        background-image: url('../assets/images/bg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .toolbar-background {
+        background-color:black!important;
+    }
+    .toolbar-title {
+        color:white;
+        font-weight: normal;
+        font-size: 1.4em;
+        letter-spacing: 2px;
+    }
+    .progress-outer {
+        width: 96%;
+        margin: 10px 2%;
+        padding: 3px;
+        text-align: center;
+        background-color: #f4f4f4;
+        border: 1px solid #dcdcdc;
+        color: #fff;
+        border-radius: 20px;
+    }
+
+  .progress-inner {
+      min-width: 15%;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 5px;
+      border-radius: 20px;
+      background-color: map-get($colors, primary);
+  }
+  ion-item {
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 0.9em!important;
+      background-color: rgba(33,71,91, 0.2)!important;
+      border-color: rgba(15, 48, 69, 0.6)!important;
+      ion-label {
+        color: darkgray;
+        font-size: 0.89em!important;
+      }
+      ion-input {
+        color:darkgray;
+      }
+      // border:1px solid black!important;
+  }
+  button {
+      background-color: transparent!important;
+      border:1px solid white;
+      display: block;
+      letter-spacing: 2px;
+  }
+  .form-errors {
+    margin:0;
+    padding-left:15px;
+    font-size: 0.8em;
+  }
+  // .names {
+  //   background-color: rgba(33,71,91, 0.4)!important;
+  //   border-top: 2px solid #224d54;
+  //   border-bottom: 2px solid #224d54;
+  //   .edit-name {
+  //     color:#fff;
+  //     font-size:22px;
+  //     font-weight: lighter;
+  //   }
+  //   .edit-username {
+  //     color:#fff;
+  //     font-size:18px;
+  //     font-weight: lighter;
+  //   }
+  // }
+  [fixed] {
+    width: 80px!important;
+    min-width: 80px!important;
+    max-width:80px!important;
+  }
+.profile {
+    display:block;
+    position:relative;
+    text-align: center;
+    overflow: auto;
+    width:210px;
+    margin:auto;
+}
+.profile-img img {
+    position:relative;
+    border:4px solid #214a50;
+    border-radius: 100%;
+}
+.edit-image {
+    position:absolute;
+     z-index: 1;
+     top:90px;
+     right:0;
+}
+
+.inputfile {
+width: 0.1px;
+height: 0.1px;
+opacity: 0;
+overflow:hidden;
+}
+
+.inputfile + label {
+    display: inline-block;
+    overflow: hidden;
+    // border:2px solid #14354a;
+    // border-radius:10px;
+}
+.inputfile + label figure {
+    margin:0;
+}
+
+}
+
+// page-edit-child-profile {
+//     ion-content {
+//         background-image: url('../assets/images/dashboard_bg.png');
+//         background-size: cover;
+//         background-repeat: no-repeat;
+//         background-position: center;
+//     }
+//     .fab {
+//          background-color: #14354a;
+//          border:2px solid #14354a;
+//     }
+//     .toolbar-background {
+//         background-color:black!important;
+//     }
+//     .toolbar-title {
+//         color:white;
+//         font-weight: normal;
+//         font-size: 1.4em;
+//         letter-spacing: 2px;
+//     }
+//     .progress-outer {
+//         width: 96%;
+//         margin: 10px 2%;
+//         padding: 3px;
+//         text-align: center;
+//         background-color: #f4f4f4;
+//         border: 1px solid #dcdcdc;
+//         color: #fff;
+//         border-radius: 20px;
+//     }
+//
+//     .progress-inner {
+//         min-width: 15%;
+//         white-space: nowrap;
+//         overflow: hidden;
+//         padding: 5px;
+//         border-radius: 20px;
+//         background-color: map-get($colors, primary);
+//     }
+//     ion-item {
+//         background-color: rgba(15, 48, 69, 0.6)!important;
+//         border-color: rgba(15, 48, 69, 0.6)!important;
+//     }
+// .profile {
+//     display:block;
+//     position:relative;
+//     text-align: center;
+//     h1, h5 {
+//         font-weight: lighter;
+//         color: white;
+//     }
+//     overflow: auto;
+//     width:210px;
+//     margin:auto;
+// }
+// .profile-img img {
+//     position:relative;
+//     border:4px solid #14354a;
+//     border-radius: 100%;
+// }
+// .edit-image {
+//     position:absolute;
+//      z-index: 1;
+//      top:90px;
+//      right:0;
+// }
+//
+// .inputfile {
+// width: 0.1px;
+// height: 0.1px;
+// opacity: 0;
+// overflow:hidden;
+// }
+//
+// .inputfile + label {
+//     display: inline-block;
+//     overflow: hidden;
+//     // border:2px solid #14354a;
+//     // border-radius:10px;
+// }
+// .inputfile + label figure {
+//     margin:0;
+// }
+//
+// }

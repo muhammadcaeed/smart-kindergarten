@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      DASHBOARD
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-menu [content]="content" type="overlay" >
+  <ion-content class="card-background-page">
+    <ion-card>
+      <img src="assets/images/dashboard/sidebar_logo.png"/>
+    </ion-card>
+    <ion-list>
+      <button ion-item class="text-style" (click)="logout()">
+        LOGOUT
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav #content [root]="rootPage"></ion-nav>
+
+<ion-content class="card-background-page">
+  <br />
+  <ion-card>
+    <img src="assets/images/dashboard/profile.png"/>
+    <div class="card-title" (click)="profile()">PROFILE</div>
+  </ion-card>
+  <ion-card>
+    <img src="assets/images/dashboard/activity.png"/>
+    <div class="card-title" (click)="activity()">ACTIVITY</div>
+  </ion-card>
+  <ion-card>
+    <img src="assets/images/dashboard/health.png"/>
+    <div class="card-title" (click)="health()">HEALTH</div>
+  </ion-card>
+  <ion-card>
+    <img src="assets/images/dashboard/messaging.png"/>
+    <div class="card-title" (click)="messaging()">MESSAGES</div>
+  </ion-card>
+  <ion-card>
+    <img src="assets/images/dashboard/reports.png"/>
+    <div class="card-title" (click)="reports()">REPORTS</div>
+  </ion-card>
+</ion-content>

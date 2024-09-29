@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      PROFILE
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab right top (click)="editProfile(user._id)">
+      <button ion-fab mini><img src="assets/images/edit.png" width="18px" /></button>
+  </ion-fab>
+  <div class="profile">
+      <div class="profile-img"><img [src]="teacher?.avatar_path" (error)="errorHandler($event)" width="200px" height="200px"></div>
+      <div class="names">
+        <h5>@{{ user.username }}</h5>
+      </div>
+  </div>
+
+  <br /><br />
+
+  <ion-list>
+    <ion-item no-lines>
+      <ion-label fixed>teacher name</ion-label>
+      <ion-label>{{ teacher.tname }}</ion-label>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label fixed>Address</ion-label>
+      <ion-label>{{ teacher.address }}</ion-label>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label fixed>Mobile no</ion-label>
+      <ion-label>{{ teacher.mobileno }}</ion-label>
+    </ion-item>
+
+
+    <ion-item no-lines>
+      <ion-label fixed>Email</ion-label>
+      <ion-label>{{ user.email }}</ion-label>
+    </ion-item>
+
+  </ion-list>
+
+
+</ion-content>

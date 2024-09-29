@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      ACTIVITIES
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+  <ion-item *ngFor="let activity of activities; let j=index" no-lines>
+    <ion-list-header>Activity # {{j+1}}</ion-list-header>
+    <!-- <ion-label></ion-label> -->
+
+    <h1>{{ activity.name }}</h1>
+    <h3>{{ activity.description }}</h3>
+    <br />
+    <!-- <ion-list> -->
+    <div *ngFor="let issue of activity.issues; let i=index">
+      <ng-template [ngIf]="issue.child_id == currentChild">
+        <ion-list-header>Issue # {{i+1}} </ion-list-header>
+        <ion-item no-lines>
+          <ion-avatar item-start>
+            <img [src]="issue?.avatar_path" (error)="errorHandler($event)">
+          </ion-avatar>
+          <h3>{{ issue.cname }}</h3>
+          <p>{{ issue.detail }}</p>
+        </ion-item>
+      </ng-template>
+    </div>
+    <!-- </ion-list> -->
+  </ion-item>
+</ion-list>
+</ion-content>

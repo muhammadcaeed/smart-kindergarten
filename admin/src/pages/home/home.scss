@@ -1,0 +1,33 @@
+page-home {
+    ion-content {
+        background-image: url('../assets/images/background.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    img {
+        width:60%;
+        margin: auto;
+        display: block;
+    }
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        button {
+            margin:0;
+            font-family: calibri;
+            font-size: 2em;
+            letter-spacing: 6px;
+        }
+        .loginBtn {
+            background-color: #22495e;
+            height:50px;
+        }
+        .signupBtn {
+            background-color: #0d3048;
+            height:50px;
+        }
+    }
+
+}

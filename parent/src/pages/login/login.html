@@ -1,0 +1,44 @@
+<ion-content>
+    <ion-icon name="arrow-back" class="backBtn" (click)="goBack()"></ion-icon>
+    <br /><br /><br /><br /><br />
+
+    <h2 class="spacing">Login</h2>
+    <!-- <div class="spacing" *ngIf="alert"> -->
+        <!-- <h5><alert></alert></h5> -->
+    <!-- </div> -->
+    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+        <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input
+                  ion-text
+                  color="light"
+                  type="text"
+                  name="username"
+                  [(ngModel)]="model.username"
+                  #username="ngModel"
+                  required>
+            </ion-input>
+        </ion-item>
+        <p *ngIf="f.submitted && !username.valid && !submit" class="spacing field-required" ion-text color="light">Username is required</p>
+
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input
+              ion-text
+              color="light"
+              type="password"
+              name="password"
+              [(ngModel)]="model.password"
+              #password="ngModel"
+              required>
+          </ion-input>
+        </ion-item>
+        <p  *ngIf="f.submitted && !password.valid && !submit" class="spacing field-required" ion-text color="light">Password is required</p>
+
+        <br /><br /><br />
+        <button ion-button class="spacing" [disabled]="loading">SUBMIT</button>
+
+    </form>
+    <p class="spacing forgot-pass" (click)="forgot()">Forgot Password?</p>
+
+</ion-content>

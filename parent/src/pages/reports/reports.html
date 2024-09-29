@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      REPORTS
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col>
+      <ion-datetime displayFormat="DD/MM/YYYY" id="time" [(ngModel)]="startDate" placeholder="Start Date ∇"></ion-datetime>
+    </ion-col>
+    <ion-col>
+      <ion-datetime displayFormat="DD/MM/YYYY" id="time" [(ngModel)]="endDate" placeholder="End Date ∇"></ion-datetime>
+    </ion-col>
+  </ion-row>
+  <button ion-button block (click)="search()" [disabled]="!startDate || !endDate">Search</button>
+
+  <ion-card *ngIf="dataA">
+    <ion-card-header>
+      Activities
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item *ngFor="let dA of dataA; let j=index" no-lines>
+        <!-- <ng-template [ngIf]="dA.perform_time <= d"> -->
+          <ion-list-header>Activity # {{j+1}}</ion-list-header>
+
+          <h1>{{ dA.name }}</h1>
+          <h3>{{ dA.description }}</h3>
+          <h3>{{ dA.perform_time }}</h3>
+          <br />
+
+          <div *ngFor="let issue of dA.issues; let i=index">
+            <ng-template [ngIf]="issue.child_id == currentChild">
+              <ion-list-header>Issue # {{i+1}} </ion-list-header>
+              <ion-item no-lines>
+                <ion-avatar item-start>
+                  <img [src]="issue?.avatar_path" (error)="errorHandler($event)">
+                </ion-avatar>
+                <h3>{{ issue.cname }}</h3>
+                <p>{{ issue.detail }}</p>
+              </ion-item>
+            </ng-template>
+          </div>
+        <!-- </ng-template> -->
+
+      </ion-item>
+
+
+
+
+    </ion-list>
+  </ion-card>
+
+  <ion-card *ngIf="dataB">
+    <ion-card-header>
+      Health
+    </ion-card-header>
+    <ion-list *ngFor="let dB of dataB">
+      <ion-item-divider color="dark">{{ dB.createdAt | date }}</ion-item-divider>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/images/report/calories.png">
+        </ion-avatar>
+        <h2>Calories Burnt</h2>
+        <p>{{ dB.calories }} kCal</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/images/report/distance.png">
+        </ion-avatar>
+        <h2>Distance covered</h2>
+        <p [hidden]="dB.distance">-</p>
+        <p [hidden]="!dB.distance || dB.distance == 0">{{ dB.distance }} m</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/images/report/steps.png">
+        </ion-avatar>
+        <h2>Steps</h2>
+        <p [hidden]="dB.steps">-</p>
+        <p [hidden]="!dB.steps || dB.steps == 0">{{ dB.steps }} count</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/images/report/heart.png">
+        </ion-avatar>
+        <h2>Heart Rate</h2>
+        <p [hidden]="dB.heart_rate">-</p>
+        <p [hidden]="!dB.heart_rate || dB.heart_rate == 0">{{ dB.heart_rate }} bmp</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/images/report/walking.png">
+        </ion-avatar>
+        <h2>Walk time</h2>
+        <p [hidden]="dB.walking">-</p>
+        <p [hidden]="!dB.walking || dB.walking == 0">{{ dB.walking }} mins</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/images/report/walking.png">
+        </ion-avatar>
+        <h2>Running time</h2>
+        <p [hidden]="dB.running">-</p>
+        <p [hidden]="!dB.running || dB.running == 0">{{ dB.running }} mins</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/images/report/vehicle.png">
+        </ion-avatar>
+        <h2>In vechicle duration</h2>
+        <p [hidden]="dB.in_vehicle">-</p>
+        <p [hidden]="!dB.in_vehicle || dB.in_vehicle == 0">{{ dB.in_vehicle }} mins</p>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+
+</ion-content>

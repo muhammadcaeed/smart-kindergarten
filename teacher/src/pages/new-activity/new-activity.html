@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      NEW ACTIVITY
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+  <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+    <ion-list>
+      <ion-item no-lines>
+        <ion-label fixed>Name</ion-label>
+        <ion-input type="text" formControlName="name" placeholder="Activity name"></ion-input>
+      </ion-item>
+      <div *ngIf="myForm.controls.name.touched && myForm.controls.name.invalid" class="form-errors" ion-text color="light">
+          Activity name is required
+      </div>
+      <br />
+
+      <ion-item no-lines>
+        <ion-label fixed>Perform time</ion-label>
+        <ion-datetime displayFormat="hh:mm A"  formControlName="perform_time" id="time" placeholder="Perform time"></ion-datetime>
+      </ion-item>
+      <div *ngIf="myForm.controls.perform_time.touched && myForm.controls.perform_time.invalid" class="form-errors" ion-text color="light">
+          Perform time is required
+      </div>
+      <br />
+
+      <ion-item no-lines>
+        <ion-label fixed>Description</ion-label>
+        <ion-textarea autosize  formControlName="description" placeholder="Activity description"></ion-textarea>
+      </ion-item>
+      <br />
+
+      <ion-item no-lines>
+        <ion-label>
+          Add a new issue
+        </ion-label>
+        <ion-label text-right>
+          <ion-icon name="add" (click)="addIssue()"></ion-icon>
+        </ion-label>
+      </ion-item>
+
+      <div formArrayName="issues">
+        <div *ngFor="let issue of myForm.controls.issues.controls; let i=index">
+          <br />
+          <div [formGroupName]="i">
+            <ion-item no-lines>
+              <ion-label>
+                Issue # {{ i + 1 }}
+              </ion-label>
+              <ion-label text-right>
+                <ion-icon name="remove" (click)="removeIssue()"></ion-icon>
+              </ion-label>
+            </ion-item>
+            <ion-item  no-lines>
+              <ion-label fixed>Child name</ion-label>
+
+              <ion-select interface="popover" formControlName="cname" placeholder="Select from dropdown">
+                <ion-label>Child name</ion-label>
+                <ion-option *ngFor="let child of children">{{child.cname}}</ion-option>
+             </ion-select>
+
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label fixed>Issue detail</ion-label>
+             <ion-textarea autosize formControlName="detail" placeholder="Issue detail"></ion-textarea>
+            </ion-item>
+
+          </div>
+        </div>
+      </div>
+      <br />
+    </ion-list>
+      <button
+        ion-button
+        small
+        type="submit"
+        [disabled]="!myForm.valid">
+      SUBMIT
+    </button>
+  </form>
+</ion-content>

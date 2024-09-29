@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "716442379485",
+    "project_id": "sk-parent-panel"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716442379485:android:451dc9e871c6bb03",
+        "android_client_info": {
+          "package_name": "sk.parent.panel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716442379485-t5bmqtrsqj2tli8hlg5qdkpjh36njdik.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "716442379485-psh09c44l9lvea886cnr2rvc7nviklqn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sk.parent.panel",
+            "certificate_hash": "ef5878406185f3119170211f24daac247d65ff56"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0KInzmR_AGkDPys8XjftICHfIh0jzeEE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

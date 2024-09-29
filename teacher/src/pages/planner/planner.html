@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      PLANNER
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-fab right bottom (click)="addNew()">
+        <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+  <ion-list>
+  <ion-item *ngFor="let plan of plans" no-lines>
+    <h1>{{ plan.activity_name }}</h1>
+    <h3>{{ plan.activity_description }}</h3>
+    <br />
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col text-left>
+
+          <h5><img src="assets/imgs/plan/perform.png">&nbsp;&nbsp;{{ plan.activity_time | date:'h:mma' }}</h5>
+        </ion-col>
+        <ion-col text-right>
+
+          <h5><img src="assets/imgs/plan/reminder.png">&nbsp;&nbsp;{{ plan.remind_time | date:'h:mma' }}</h5>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+</ion-list>
+</ion-content>

@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      FITNESS
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+calories :  {{this.values.calories}} <br />
+heart_rate :   {{this.values.heart_rate}} <br />
+distance :  {{this.values.distance}} <br />
+steps :  {{this.values.steps}} <br />
+sleep :  {{this.values.sleep}} <br />
+walking :  {{this.values.walking}} <br />
+running :  {{this.values.running}} <br />
+<br />
+
+  <ion-card>
+    <img src="assets/images/health/caloriesF.png"/>
+    <div class="card-subtitle" [hidden]="!this.values.calories">{{this.values.calories | number: '.0-0'}} kCal</div>
+    <div class="card-subtitle" [hidden]="this.values.calories">No Data</div>
+    <div class="card-title">Calories</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/images/health/heart.png"/>
+    <div class="card-subtitle" [hidden]="!this.values.heart_rate">{{this.values.heart_rate | number}} bmp</div>
+    <div class="card-subtitle" [hidden]="this.values.heart_rate">No Data</div>
+    <div class="card-title">Heart Rate</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/images/health/distance.jpg"/>
+    <div class="card-subtitle" [hidden]="!this.values.distance">{{this.values.distance | number: '.0-0'}} m</div>
+    <div class="card-subtitle" [hidden]="this.values.distance">No Data</div>
+    <div class="card-title">Distance</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/images/health/steps.jpg"/>
+    <div class="card-subtitle" [hidden]="!this.values.steps">{{this.values.steps | number}} count</div>
+    <div class="card-subtitle" [hidden]="this.values.steps">No Data</div>
+    <div class="card-title">Steps</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/images/health/sleep.jpg"/>
+    <div class="card-subtitle" [hidden]="!this.values.sleep">{{this.values.sleep | number: '.0-2'}} hrs</div>
+    <div class="card-subtitle" [hidden]="this.values.sleep">No Data</div>
+    <div class="card-title">Sleep</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/images/health/walking.jpg"/>
+    <div class="card-subtitle" [hidden]="!this.values.walking">{{this.values.walking | number: '.0-0'}} mins</div>
+    <div class="card-subtitle" [hidden]="this.values.walking">No Data</div>
+    <div class="card-title">Walking</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/images/health/running.jpg"/>
+    <div class="card-subtitle" [hidden]="!this.values.running">{{this.values.running | number: '.0-0' }} mins</div>
+    <div class="card-subtitle" [hidden]="this.values.running">No Data</div>
+    <div class="card-title">Running</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/images/health/in_vehicle.jpg"/>
+    <div class="card-subtitle" [hidden]="!this.values.in_vehicle">{{this.values.in_vehicle | number: '.0-0' }} mins</div>
+    <div class="card-subtitle" [hidden]="this.values.in_vehicle">No Data</div>
+    <div class="card-title">In Vehicle</div>
+  </ion-card>
+
+
+
+</ion-content>

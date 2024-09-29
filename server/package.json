@@ -1,0 +1,25 @@
+{
+    "name": "smart-kindergarten-server",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "Server for Smart Kindergarten",
+    "dependencies": {
+        "@sendgrid/mail": "^6.1.4",
+        "bcryptjs": "^2.1.0",
+        "body-parser": "^1.13.2",
+        "cors": "^2.8.1",
+        "express": "^4.13.0",
+        "express-jwt": "^3.0.1",
+        "fs": "0.0.2",
+        "jsonwebtoken": "^5.0.2",
+        "lodash": "^3.10.0",
+        "mongodb": "^2.1.16",
+        "mongoskin": "^2.1.0",
+        "multer": "^1.1.0",
+        "q": "^1.4.1",
+        "request": "^2.83.0",
+        "rootpath": "^0.1.2",
+        "socket.io": "^2.0.3",
+        "underscore": "^1.8.3"
+    }
+}

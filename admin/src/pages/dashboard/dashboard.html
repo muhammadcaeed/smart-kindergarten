@@ -1,0 +1,40 @@
+<ion-header danger=1>
+  <ion-navbar hideBackButton>
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      DASHBOARD
+    </ion-title>
+  </ion-navbar>
+  </ion-header>
+
+
+  <ion-menu [content]="content" type="overlay" >
+  <ion-content class="card-background-page">
+      <ion-card>
+        <img src="assets/images/sidebar_logo_bg.png"/>
+      </ion-card>
+    <ion-list>
+      <button ion-item class="text-style" (click)="logout()">
+        LOGOUT
+      </button>
+    </ion-list>
+  </ion-content>
+  </ion-menu>
+
+  <ion-nav #content [root]="rootPage"></ion-nav>
+
+<ion-content class="card-background-page">
+    <br /><br /><br />
+  <ion-card>
+    <img src="assets/images/children_bg.png"/>
+    <div class="card-title" (click)="children()">CHILDREN</div>
+  </ion-card>
+  <ion-card>
+    <img src="assets/images/teachers_bg.png"/>
+    <div class="card-title" (click)="teachers()">TEACHERS</div>
+  </ion-card>
+</ion-content>

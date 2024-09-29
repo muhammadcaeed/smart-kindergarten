@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      MESSAGES
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+    <ion-item class="chat" no-lines (click)="chatGroup()">
+      <ion-avatar item-start>
+        <img src="assets/images/chat/megaphone.png">
+      </ion-avatar>
+      Chat Group
+    </ion-item>
+    <ion-list-header>
+      TEACHERS
+    </ion-list-header>
+    <ion-searchbar
+      placeholder="search a teacher..."
+      [(ngModel)]="searchInput"
+      (ionInput)="onInput($event)">
+    </ion-searchbar>
+    <ion-list>
+      <ion-item-sliding *ngFor="let teacher of teachers" >
+        <ion-item no-lines (click)="inbox(teacher._id, parentId)">
+          <ion-avatar item-start>
+            <img [src]="teacher.avatar_path" (error)="errorHandler($event)">
+          </ion-avatar>
+          <h2>{{ teacher.tname }}</h2>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+    <!-- <ion-item no-lines>
+      <ion-avatar item-start>
+        <img src="assets/images/chat/teacher.png">
+      </ion-avatar>
+        Teacher 1
+    </ion-item>
+    <ion-item no-lines>
+      <ion-avatar item-start>
+        <img src="assets/images/chat/teacher.png">
+      </ion-avatar>
+        Teacher 2
+    </ion-item> -->
+
+</ion-content>

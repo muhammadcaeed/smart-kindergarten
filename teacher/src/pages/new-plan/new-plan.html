@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      NEW PLAN
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <ion-list>
+    <ion-item no-lines>
+      <ion-label fixed>Name</ion-label>
+      <ion-input formControlName="activity_name" type="text" id="activity_name"  placeholder="Activity / Event name"></ion-input>
+    </ion-item>
+    <div *ngIf="activity_name.touched && activity_name.invalid" class="form-errors" ion-text color="light">
+        Activity name is required
+    </div>
+    <br />
+
+    <ion-item no-lines>
+      <ion-label fixed>Time</ion-label>
+      <ion-datetime displayFormat="hh:mm A"  formControlName="activity_time" id="activity_time" placeholder="Activity time"></ion-datetime>
+    </ion-item>
+    <div *ngIf="activity_time.touched && activity_time.invalid" class="form-errors" ion-text color="light">
+        Activity time is required
+    </div>
+    <br />
+
+
+
+    <ion-item no-lines>
+      <ion-textarea autosize  formControlName="activity_description" id="activity_description" placeholder="Activity description"></ion-textarea>
+      <ion-label fixed>Description</ion-label>
+    </ion-item>
+    <div *ngIf="activity_description.touched && activity_description.invalid" class="form-errors" ion-text color="light">
+        Activity description is required
+    </div>
+
+  <br />
+    <ion-item no-lines>
+      <ion-label fixed>Remind at</ion-label>
+      <ion-datetime displayFormat="hh:mm A"  formControlName="remind_time" id="remind_time" placeholder="Remind time"></ion-datetime>
+    </ion-item>
+    <div *ngIf="remind_time.touched && remind_time.invalid" class="form-errors" ion-text color="light">
+        Remind time is required
+    </div>
+    <br />
+
+  </ion-list>
+  <div padding>
+    <button
+      ion-button
+      small
+      type="submit"
+      [disabled]="activity_name.invalid || activity_time.invalid || activity_description.invalid || remind_time.invalid"
+      >
+    SUBMIT</button>
+  </div>
+</form>
+</ion-content>

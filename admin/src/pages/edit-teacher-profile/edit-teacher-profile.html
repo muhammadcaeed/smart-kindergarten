@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      EDIT PROFILE
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<form [formGroup]="form" (ngSubmit)="!(username.invalid  || tname.invalid || address.invalid || mobileno.invalid || email.invalid) && updateChanges()">
+    <div class="profile">
+        <div class="edit-image">
+            <input type="file" class="form-control" id="inputfile" class="inputfile" name="single" ng2FileSelect [uploader]="uploader"  (change)="uploader.queue[0].upload()" />
+            <label for="inputfile">
+                <figure>
+                    <img src="assets/images/edit.png" width="20px" />
+                </figure>
+            </label>
+        </div>
+        <div class="profile-img"><img [src]="teacher?.avatar_path" (error)="errorHandler($event)" width="200px" height="200px"></div>
+    </div>
+
+    <br /><br />
+
+    <ion-list>
+      <ion-item no-lines>
+        <ion-label fixed>Username</ion-label>
+        <ion-input formControlName="username" type="text" id="username"></ion-input>
+      </ion-item>
+      <div *ngIf="username && username.invalid" class="form-errors" ion-text color="light">
+        <div *ngIf="username.errors.required">Username is required</div>
+        <div *ngIf="username.errors.minlength && !username.errors.cannotContainSpace && !username.errors.cannotStartWithNumber">Username should be minimum {{ username.errors.minlength.requiredLength }} characters long</div>
+        <div *ngIf="username.errors.maxlength && !username.errors.cannotContainSpace && !username.errors.cannotStartWithNumber">Username should be maximum {{ username.errors.maxlength.requiredLength }} characters long</div>
+        <div *ngIf="username.errors.cannotContainSpace">Username cannot contain space</div>
+        <div *ngIf="username.errors.cannotStartWithNumber && !username.errors.cannotContainSpace">Invalid Username</div>
+        <div *ngIf="username.errors.shouldBeUnique">Username already taken</div>
+
+      </div>
+
+      <ion-item no-lines>
+        <ion-label fixed>Teacher name</ion-label>
+        <ion-input formControlName="tname" type="text" id="tname"></ion-input>
+      </ion-item>
+      <div *ngIf="tname.invalid" class="form-errors" ion-text color="light">
+        <div *ngIf="tname.errors.required">Teacher name is required</div>
+        <div *ngIf="tname.errors.minlength && !tname.errors.cannotContainNumber">Name should be minimum {{ tname.errors.minlength.requiredLength }} characters</div>
+        <div *ngIf="tname.errors.maxlength && !tname.errors.cannotContainNumber">Name should be maximum {{ tname.errors.maxlength.requiredLength }} characters</div>
+        <div *ngIf="tname.errors.cannotContainNumber">Name cannot contain number</div>
+      </div>
+
+      <ion-item no-lines>
+        <ion-label fixed>Address</ion-label>
+        <ion-input formControlName="address" type="text" id="address"></ion-input>
+      </ion-item>
+      <div *ngIf="address.invalid" class="form-errors" ion-text color="light">
+        <div *ngIf="address.errors.required">Address is required</div>
+      </div>
+
+      <ion-item no-lines>
+        <ion-label fixed>Mobile no</ion-label>
+        <ion-input formControlName="mobileno" type="text" id="mobileno"></ion-input>
+      </ion-item>
+      <div *ngIf="mobileno.invalid" class="form-errors" ion-text color="light">
+        <div *ngIf="mobileno.errors.required">Mobile number is required</div>
+        <div *ngIf="mobileno.errors.pattern">Invalid mobile number (03XXXXXXXXX)</div>
+      </div>
+
+
+      <ion-item no-lines>
+        <ion-label fixed>Email</ion-label>
+        <ion-input formControlName="email" type="email" id="email"></ion-input>
+      </ion-item>
+      <div *ngIf="email.invalid" class="form-errors" ion-text color="light">
+        <div *ngIf="email.errors.required || email.errors.email">Email is required</div>
+        <div *ngIf="email.errors.shouldBeUnique">Email already taken</div>
+      </div>
+
+    </ion-list>
+
+    <div padding>
+      <button
+        ion-button
+        small
+        type="submit"
+        [disabled]="
+          (user.username == username.value &&
+          user.email == email.value &&
+          teacher.tname == tname.value &&
+          teacher.address == address.value &&
+          teacher.mobileno === mobileno.value) ||
+          (username.invalid  || tname.invalid || address.invalid || mobileno.invalid || email.invalid)
+          ">
+      SUBMIT</button>
+
+      <button ion-button small type="button" (click)="changePassword()">CHANGE PASSWORD</button>
+    </div>
+    </form>
+
+</ion-content>

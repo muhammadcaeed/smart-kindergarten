@@ -1,0 +1,33 @@
+<ion-content>
+    <ion-icon name="arrow-back" class="backBtn" (click)="goBack()"></ion-icon>
+    <br /><br /><br /><br /><br />
+
+    <h2 class="spacing">Forgot Password</h2>
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input
+                  ion-text
+                  color="light"
+                  type="text"
+                  name="email"
+                  [(ngModel)]="model.email"
+                  required>
+            </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>username</ion-label>
+          <ion-input
+              ion-text
+              color="light"
+              type="text"
+              name="username"
+              [(ngModel)]="model.username"
+              required>
+          </ion-input>
+        </ion-item>
+
+        <br /><br /><br />
+        <button ion-button class="spacing" (click)="forgot()">SUBMIT</button>
+
+</ion-content>

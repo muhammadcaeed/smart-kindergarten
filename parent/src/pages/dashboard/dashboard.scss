@@ -1,0 +1,76 @@
+page-dashboard {
+    ion-content {
+      background-color:#1b4040!important;
+        background-image: url('../assets/images/texture.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .toolbar-background {
+        background-color:black!important;
+    }
+    .toolbar-title {
+        color:white;
+        font-weight: normal;
+        font-size: 1.4em;
+        letter-spacing: 2px;
+    }
+    .toolbar-title-md {
+        // text-align: center;
+    }
+    .icon {
+        color:white;
+    }
+.text-style {
+    font-family: calibri;
+    font-size: 1.5em;
+    letter-spacing: 3px;
+    color: #fff;
+}
+ion-menu {
+ .scroll-content {
+    overflow-y: auto !important;
+    background-color:#122b2a !important;
+ }
+ .card-background-page {
+   ion-card {
+     position: relative;
+     text-align: center;
+     background:black;
+     margin: 0;
+     width:100%;
+    }
+   }
+   .item-block {
+       background-color: #1b4040;
+       border:0 !important;
+       margin-top:3px;
+   }
+}
+
+.card-background-page {
+  ion-card {
+    position: relative;
+    text-align: center;
+    background:black;
+  }
+
+.card-title {
+    position: absolute;
+    top: 32%;
+    font-size: 3.0em;
+    width: 100%;
+    color: #fff;
+    letter-spacing: 0.16em;
+  }
+
+.card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+
+}
+}

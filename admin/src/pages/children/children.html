@@ -1,0 +1,41 @@
+<ion-header danger=1>
+  <ion-navbar hideBackButton>
+      <ion-buttons left>
+        <button ion-button (click)="goBack()">
+          <ion-icon><img src="assets/images/left-arrow.png"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-title>
+      CHILDREN
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div [ngClass]="{ 'show': alert, 'hide': !alert, 'spacing': true }">
+        <h5>{{ alertText }}</h5>
+    </div>
+    <ion-fab right bottom (click)="addNew()">
+        <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+    <ion-searchbar
+    placeholder="search a child..."
+  [(ngModel)]="searchInput"
+  (ionInput)="onInput($event)">
+</ion-searchbar>
+    <ion-list>
+        <ion-item-sliding *ngFor="let child of children" >
+            <ion-item no-lines (click)="viewProfile(child._id, child.user_id)">
+              <ion-avatar item-start>
+                <img [src]="child.avatar_path" (error)="errorHandler($event)">
+              </ion-avatar>
+              <h2>{{ child.cname }}</h2>
+              <h3>child of {{ child.gname }}</h3>
+            </ion-item>
+
+          <ion-item-options side="right">
+            <button ion-button class="slideBg" (click)="confirmDelete(child.user_id)"><img src="assets/images/garbage.png" width="60%"></button>
+          </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>

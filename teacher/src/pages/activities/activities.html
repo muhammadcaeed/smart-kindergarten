@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      ACTIVITY
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-fab right bottom (click)="addNew()">
+        <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+  <ion-list>
+  <ion-item *ngFor="let activity of activities; let j=index" no-lines>
+    <ion-list-header>Activity # {{j+1}}</ion-list-header>
+    <!-- <ion-label></ion-label> -->
+
+    <h1>{{ activity.name }}</h1>
+    <h3>{{ activity.description }}</h3>
+    <br />
+    <!-- <ion-list> -->
+      <div *ngFor="let issue of activity.issues; let i=index">
+        <ion-list-header>Issue # {{i+1}} </ion-list-header>
+
+    <ion-item no-lines>
+
+      <ion-avatar item-start>
+        <img [src]="issue.avatar_path" (error)="errorHandler($event)">
+      </ion-avatar>
+
+      <p>Child name: {{ issue.cname }}</p>
+      <h3>Issue detail: {{ issue.detail }}</h3>
+    </ion-item>
+      </div>
+    <!-- </ion-list> -->
+  </ion-item>
+</ion-list>
+</ion-content>
